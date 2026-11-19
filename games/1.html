@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cluegle</title>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="clueglefavicon.ico">
+    </head>
+    <body>
+
+        <header>
+            <div class="header-left">
+                <a href="../index.html"><h2><span class="blue">C</span><span class="green">l</span><span class="red">u</span><span class="yellow">e</span><span class="blue">g</span><span class="green">l</span><span class="red">e</span></h2></a>
+                <div class="guess-container">
+                    <input id="guessbox" class="guessbox" type="text" name="guess" placeholder="type your guess" onkeydown="if (event.key === 'Enter') submitGuess()">
+                    <button id="guess-button" class="guess-button" onclick="submitGuess()">
+                        →
+                    </button>
+                </div>
+            </div>
+            <div class="header-right">
+                <span id="points">10</span> <span>points</span>
+                <button id="copy" class="copy" onclick="copyResult()">Copy</button>
+            </div>
+        </header>
+
+        <div class="game-body">
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 5)">
+                    Reveal for <span class="red">-5</span> points.
+                </div>
+                <div class="search-result">
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608;.org</p>
+                    <p>https://www.&#9608;&#9608;&#9608;&#9608;&#9608;.org &rsaquo; ... &rsaquo; Article</p>
+                    <p>The life of &#9608;&#9608;&#9608;&#9608;&#9608;: a timeline for 6 years old +</p>
+                    <p>On 2 December 1804, &#9608;&#9608;&#9608;&#9608;&#9608; was crowned Emperor of the French in the cathédrale Notre-Dame in Paris. He took the name &#9608;&#9608;&#9608;&#9608;&#9608;.</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 1)">
+                    Reveal for <span class="red">-1</span> points.
+                </div>
+                <div class="people-also-ask">
+                    <p>People also ask</p>
+                    <p>What is &#9608;&#9608;&#9608;&#9608;&#9608; famous for?</p>
+                    <hr>
+                    <p>How and why did &#9608;&#9608;&#9608;&#9608;&#9608; fall?</p>
+                    <hr>
+                    <p>Is &#9608;&#9608;&#9608;&#9608;&#9608;'s bloodline still alive today?</p>
+                    <hr>
+                    <p>Was &#9608;&#9608;&#9608;&#9608;&#9608; an LGBTQ ally?</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 6)">
+                    Reveal for <span class="red">-6</span> points.
+                </div>
+                <div class="search-result">
+                    <p>Château de Versailles</p>
+                    <p>https://en.chateauversailles.fr &rsaquo; history &rsaquo; great-characters</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608; 1769-1821</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608;. Emperor of the French 1769-1821. Born into a Corsican family of minor nobility, &#9608;&#9608;&#9608;&#9608;&#9608; rose swiftly to power after the French...</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 5)">
+                    Reveal for <span class="red">-5</span> points.
+                </div>
+                <div class="search-result">
+                    <p>American Battlefield Trust</p>
+                    <p>https://www.battlefields.org &rsaquo; learn &rsaquo; biographies &rsaquo; &#9608;&#9608;&#9608;&#9608;&#9608;...</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608;, a military commander and Emperor of the French, was one of the most powerful men in the early nineteenth century.</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 4)">
+                    Reveal for <span class="red">-4</span> points.
+                </div>
+                <div class="search-result">
+                    <p>History Hit</p>
+                    <p>https://www.historyhit.com &rsaquo; Articles &rsaquo; Battle of Waterloo</p>
+                    <p>10 Facts About &#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>10 Facts About &#9608;&#9608;&#9608;&#9608;&#9608; &#183; 1. He wrote a romance novel. &#183; 2. His first wife, Josephine &#9608;&#9608;&#9608;&#9608;&#9608;, narrowly avoided the guillotine &#183; 3. He would disguise...</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 3)">
+                    Reveal for <span class="red">-3</span> points.
+                </div>
+                <div class="search-result">
+                    <p>The Ohio State University</p>
+                    <p>https://ehistory.osu.edu &rsaquo; biographies &rsaquo; &#9608;&#9608;&#9608;&#9608;&#9608;...</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608; | OSU eHistory</p>
+                    <p>On the 15th of August 1769 in the French-occupied capital of Corsica, Ajaccio, &#9608;&#9608;&#9608;&#9608;&#9608; was born to his father Carlo Maria di &#9608;&#9608;&#9608;&#9608;&#9608;, and his mother, ...</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 3)">
+                    Reveal for <span class="red">-3</span> points.
+                </div>
+                <div class="search-result">
+                    <p>UW Libraries Digital Collections</p>
+                    <p>https://content.lib.washington.edu &rsaquo; &#9608;&#9608;&#9608;&#9608;&#9608;web &rsaquo; timel...</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608; Era and Timeline - UW Libraries Digital Collections</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608; was born on the island of Corsica in 1769 to an Italian family that was given French noble status nine years later.</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 2)">
+                    Reveal for <span class="red">-2</span> points.
+                </div>
+                <div class="search-result">
+                    <p>Private Tour Guide in Paris</p>
+                    <p>https://www.tours-in-paris.com &rsaquo; post &rsaquo; &#9608;&#9608;&#9608;&#9608;&#9608;-perso...</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608;: Personality, Routine, Life in Paris</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608; was known to have premonitions, vivid dreams and battle instincts. He was a political mastermind, he gained power quickly. He won many battles thanks ...</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 3)">
+                    Reveal for <span class="red">-3</span> points.
+                </div>
+                <div class="people-also-search-for">
+                    <p>People also search for</p>
+                    <div class="search-for-grid">
+                        <b>When was &#9608;&#9608;&#9608;&#9608;&#9608; died</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; age at death</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; born</b>
+                        <b>Why was &#9608;&#9608;&#9608;&#9608;&#9608; exiled</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; movie</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; II</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; height</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; Airport</b>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+
+        let date = "2026-11-19";
+        let id = 1;
+        let answer = "Napoleon Bonaparte";
+        let acceptedanswers = ["napoleon bonaparte", "napoleon", "napoleon i", "napoleon bonaparte i"];
+
+        let points = 10;
+        let game = Array(points).fill(1);
+        let index = 0;
+
+        function reveal(element, value) {
+
+            if (value > points) {
+              value = points;
+            }
+            points -= value;
+            document.getElementById("points").innerHTML = points;
+            while (index + points < 10) {
+              game[index] = 0;
+              index++;
+            }
+            if (points == 0) {
+              document.getElementById("points").style.color = getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-red");
+              document.getElementById("guessbox").disabled = true;
+              document.getElementById("guess-button").disabled = true;
+              document.getElementById("guessbox").value = answer;
+              document.getElementById("copy").style.display = "block";
+              const container = document.querySelector(".guess-container");
+              container.classList.remove("shake");
+              void container.offsetWidth;
+              container.classList.add("shake");
+              saveGame();
+              revealAll();
+            }
+
+            const revealed = element.nextElementSibling;
+
+            element.style.display = "none";
+            revealed.style.display = "block";
+        }
+
+        function revealAll() {
+            const elements = document.querySelectorAll(".redacted");
+
+            elements.forEach(element => {
+                const revealed = element.nextElementSibling;
+
+                element.style.display = "none";
+                revealed.style.display = "block";
+            });
+        }
+
+        function submitGuess() {
+            // Grab and sanitize the guess
+            let guess = document.querySelector(".guessbox").value
+                .toLowerCase()
+                .replace(/[^a-z0-9 ]/g, "");
+
+            // Check against accepted answers
+            for (let accepted of acceptedanswers) {
+                if (damerauLevenshtein(guess, accepted) <= 2) {
+                    document.getElementById("points").style.color = getComputedStyle(document.documentElement)
+                          .getPropertyValue("--google-green");
+                    document.getElementById("guessbox").disabled = true;
+                    document.getElementById("guess-button").disabled = true;
+                    document.getElementById("copy").style.display = "block";
+                    celebrate();
+                    revealAll();
+                    saveGame();
+                    return true;
+                }
+            }
+
+            points--;
+            document.getElementById("points").innerHTML = points;
+            game[index] = -1;
+            index++;
+            if (points == 0) {
+              document.getElementById("points").style.color = getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-red");
+              document.getElementById("guessbox").disabled = true;
+              document.getElementById("guess-button").disabled = true;
+              document.getElementById("guessbox").value = answer;
+              document.getElementById("copy").style.display = "block";
+              revealAll();
+              saveGame();
+            }
+            const container = document.querySelector(".guess-container");
+            container.classList.remove("shake");
+            void container.offsetWidth;
+            container.classList.add("shake");
+            return false;
+        }
+
+        async function copyResult() {
+            const emojis = game.map(value => {
+                if (value === 1) return "🌟";
+                if (value === -1) return "💔";
+                return "🧩";
+            }).join(" ");
+
+            const result =
+                `Cluegle #${id} · ${date}\n` +
+                `${points} ${points === 1 ? "point" : "points"}\n` +
+                `${emojis}\n` +
+                `https://cluegle.github.io`;
+
+            try {
+                await navigator.clipboard.writeText(result);
+            } catch (error) {
+                console.error("Failed to copy:", error);
+            }
+        }
+
+        function saveGame() {
+            let localState = {};
+
+            try {
+                localState = JSON.parse(localStorage.getItem("cluegle.history")) || {};
+            } catch {
+                localState = {};
+            }
+
+            localState[String(id)] = game;
+
+            localStorage.setItem("cluegle.history", JSON.stringify(localState));
+        }
+
+        function damerauLevenshtein(a, b) {
+            let matrix = [];
+
+            // Initialize matrix
+            for (let i = 0; i <= a.length; i++) {
+                matrix[i] = [i];
+            }
+
+            for (let j = 0; j <= b.length; j++) {
+                matrix[0][j] = j;
+            }
+
+            // Calculate edit distances
+            for (let i = 1; i <= a.length; i++) {
+                for (let j = 1; j <= b.length; j++) {
+                    let cost = a[i - 1] === b[j - 1] ? 0 : 1;
+
+                    matrix[i][j] = Math.min(
+                        matrix[i - 1][j] + 1,       // Deletion
+                        matrix[i][j - 1] + 1,       // Insertion
+                        matrix[i - 1][j - 1] + cost // Replacement
+                    );
+
+                    // Adjacent character swap (transposition)
+                    if (
+                        i > 1 &&
+                        j > 1 &&
+                        a[i - 1] === b[j - 2] &&
+                        a[i - 2] === b[j - 1]
+                    ) {
+                        matrix[i][j] = Math.min(
+                            matrix[i][j],
+                            matrix[i - 2][j - 2] + 1
+                        );
+                    }
+                }
+            }
+
+            return matrix[a.length][b.length];
+        }
+
+        function celebrate() {
+            const colors = [
+              getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-red"),
+              getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-yellow"),
+              getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-green"),
+              getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-blue")
+            ];
+
+            for (let i = 0; i < 35; i++) {
+                const particle = document.createElement("div");
+                particle.classList.add("confetti");
+
+                particle.style.backgroundColor =
+                    colors[Math.floor(Math.random() * colors.length)];
+
+                particle.style.setProperty("--x", `${(Math.random() - 0.5) * 400}px`);
+                particle.style.setProperty("--y", `${(Math.random() - 0.7) * 400}px`);
+                particle.style.setProperty("--rotation", `${Math.random() * 720}deg`);
+
+                document.body.appendChild(particle);
+
+                particle.addEventListener("animationend", () => {
+                    particle.remove();
+                });
+            }
+
+            // Animate points counter
+            const pointsDisplay = document.getElementById("points");
+
+            pointsDisplay.classList.remove("points-pop");
+            void pointsDisplay.offsetWidth;
+            pointsDisplay.classList.add("points-pop");
+        }
+
+        function loadGame() {
+            let localState = {};
+
+            try {
+                localState = JSON.parse(localStorage.getItem("cluegle.history")) || {};
+            } catch {
+                localState = {};
+            }
+
+            // Check whether this game has already been completed
+            if (!Object.prototype.hasOwnProperty.call(localState, String(id))) {
+                return;
+            }
+
+            // Restore the game
+            game = localState[String(id)];
+
+            // Calculate remaining points
+            points = game.filter(value => value === 1).length;
+
+            document.getElementById("points").innerHTML = points;
+
+            // Reveal all clues
+            revealAll();
+
+            // Disable further guesses
+            document.getElementById("guessbox").disabled = true;
+            document.getElementById("guess-button").disabled = true;
+
+            // Display the correct answer
+            document.getElementById("guessbox").value = answer;
+
+            // Show the copy results button
+            document.getElementById("copy").style.display = "block";
+
+            // Update points color
+            if (points === 0) {
+                document.getElementById("points").style.color =
+                    getComputedStyle(document.documentElement)
+                        .getPropertyValue("--google-red");
+            } else {
+                document.getElementById("points").style.color =
+                    getComputedStyle(document.documentElement)
+                        .getPropertyValue("--google-green");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadGame();
+        });
+        </script>
+    </body>
+</html>
