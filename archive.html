@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cluegle - Archive</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="clueglefavicon.ico">
+    </head>
+    <body>
+        <div class="other-body">
+            <h1><span class="blue">C</span><span class="green">l</span><span class="red">u</span><span class="yellow">e</span><span class="blue">g</span><span class="green">l</span><span class="red">e</span></h1>
+            <br><br>
+            <h2><span class="green">Archive</span></h2>
+            <div class="archive-container">
+              <a id="archive-1" class="archive-item" href="1.html">#1 &#183; 2026-11-18</a>
+            </div>
+            <br><br>
+            <a class="nav" href="index.html">Home</a>
+        </div>
+        <script>
+        function markCompletedArchiveGames(storageKey, totalGames) {
+          let history = {};
+          try {
+            history = JSON.parse(localStorage.getItem(storageKey)) || {};
+          } catch {
+            history = {};
+          }
+
+          for (let gameId = totalGames; gameId >= 1; gameId--) {
+            if (Object.prototype.hasOwnProperty.call(history, String(gameId))) {
+              const el = document.getElementById(`archive-${gameId}`);
+              if (el) {
+                el.classList.add("archive-complete");
+              }
+            }
+          }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const totalGames = document.querySelectorAll(
+                '.archive-container a[id^="archive-"]'
+            ).length;
+
+            markCompletedArchiveGames("cluegle.history", totalGames);
+        });
+        </script>
+    </body>
+</html>
