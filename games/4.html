@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cluegle</title>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="clueglefavicon.ico">
+    </head>
+    <body>
+
+        <header>
+            <div class="header-left">
+                <a href="../index.html"><h2><span class="blue">C</span><span class="green">l</span><span class="red">u</span><span class="yellow">e</span><span class="blue">g</span><span class="green">l</span><span class="red">e</span></h2></a>
+                <div class="guess-container">
+                    <input id="guessbox" class="guessbox" type="text" name="guess" placeholder="type your guess" onkeydown="if (event.key === 'Enter') submitGuess()">
+                    <button id="guess-button" class="guess-button" onclick="submitGuess()">
+                        →
+                    </button>
+                </div>
+            </div>
+            <div class="header-right">
+                <span id="points">10</span> <span>points</span>
+                <button id="copy" class="copy" onclick="copyResult()">Copy</button>
+            </div>
+        </header>
+
+        <div class="game-body">
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 6)">
+                    Reveal for <span class="red">-6</span> points.
+                </div>
+                <div class="search-result">
+                    <p>History.com</p>
+                    <p>https://www.history.com &rsaquo; Articles</p>
+                    <p>Did the &#9608;&#9608;&#9608;&#9608;&#9608; Cause the Bronze Age Collapse?</p>
+                    <p>Jul 22, 2026 - Rather than forming a. &#9608;&#9608;&#9608;&#9608;&#9608; were described as migrants who attacked Anatolia, Cyprus, Syria and parts of Egypt for grain and other food.</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 1)">
+                    Reveal for <span class="red">-1</span> points.
+                </div>
+                <div class="people-also-ask">
+                    <p>People also ask</p>
+                    <p>Who were the &#9608;&#9608;&#9608;&#9608;&#9608; and why were they important?</p>
+                    <hr>
+                    <p>Are the &#9608;&#9608;&#9608;&#9608;&#9608; a mystery?</p>
+                    <hr>
+                    <p>Is the &#9608;&#9608;&#9608;&#9608;&#9608; theory debunked?</p>
+                    <hr>
+                    <p>Who defeated the &#9608;&#9608;&#9608;&#9608;&#9608;?</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 1)">
+                    Reveal for <span class="red">-1</span> points.
+                </div>
+                <div class="search-result">
+                    <p>Reddit &#183; r/AskHistory</p>
+                    <p>20+ comments &#183; 2 years ago</p>
+                    <p>Were the &#9608;&#9608;&#9608;&#9608;&#9608; really *that* mysterious? - Reddit</p>
+                    <p>Went down the &#9608;&#9608;&#9608;&#9608;&#9608; rabbit hole last night and it seems like one of those mysteries that has a disappointingly simple answer. However, I can't ...</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 6)">
+                    Reveal for <span class="red">-6</span> points.
+                </div>
+                <div class="search-result">
+                    <p>African History Extra</p>
+                    <p>https://www.africanhistoryextra.com &rsaquo; &#9608;&#9608;&#9608;&#9608;&#9608;...</p>
+                    <p>The &#9608;&#9608;&#9608;&#9608;&#9608; of Ancient Egypt and the Medieval East ...</p>
+                    <p>4 days ago - The invasions of the mysterious &#9608;&#9608;&#9608;&#9608;&#9608; have long been regarded as the principal cause of the Late Bronze Age collapse around 1200 BC.</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 3)">
+                    Reveal for <span class="red">-3</span> points.
+                </div>
+                <div class="search-result">
+                    <p>Mini Museum</p>
+                    <p>https://shop.minimuseum.com &rsaquo; blogs &rsaquo; cool-things &rsaquo; t...</p>
+                    <p>The &#9608;&#9608;&#9608;&#9608;&#9608; and Bronze Age Propaganda</p>
+                    <p>Jan 11, 2023 - The &#9608;&#9608;&#9608;&#9608;&#9608; waged two campaigns against Egypt, first against pharaoh Merneptah in 1207 BCE, and then thirt years later against Ramesses III ...</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 4)">
+                    Reveal for <span class="red">-4</span> points.
+                </div>
+                <div class="search-result">
+                    <p>Biblical Archaeology Society</p>
+                    <p>https://www.biblicalarchaeology.org &rsaquo; ancient-cultures</p>
+                    <p>Who Were the &#9608;&#9608;&#9608;&#9608;&#9608;?</p>
+                    <p>July 27, 2026 - The &#9608;&#9608;&#9608;&#9608;&#9608; were a very real phenomenon of the Mediterranean world in the tumultuous days at end of the Late Bronze Age.</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 5)">
+                    Reveal for <span class="red">-5</span> points.
+                </div>
+                <div class="search-result">
+                    <p>Apple Podcasts</p>
+                    <p>https://podcasts.apple.com &rsaquo; podcast &rsaquo; &#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>The &#9608;&#9608;&#9608;&#9608;&#9608; - The Ancients</p>
+                    <p>Aug 27, 2025 - Tristan Hughes sits down with Professor Eric Cline to explore the enigmatic &#9608;&#9608;&#9608;&#9608;&#9608;, often blamed for the catastrophic Bronze Age collapse ...</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 5)">
+                    Reveal for <span class="red">-5</span> points.
+                </div>
+                <div class="search-result">
+                    <p>Wikipedia</p>
+                    <p>https://simple.wikipedia.org &rsaquo; wiki &rsaquo; &#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608; - Simple English Wikipedia, the free ...</p>
+                    <p>The &#9608;&#9608;&#9608;&#9608;&#9608; were a supposed seafaring confederation that attacked ancient Egypt and other parts of the East Mediterranean before and during the Bronze Age ...</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 2)">
+                    Reveal for <span class="red">-2</span> points.
+                </div>
+                <div class="people-also-search-for">
+                    <p>People also search for</p>
+                    <div class="search-for-grid">
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; today</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; origin</b>
+                        <b>The Ethnicity of the &#9608;&#9608;&#9608;&#9608;&#9608;</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; Odyssey</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; history</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; wikipedia</b>
+                        <b>What happened to the &#9608;&#9608;&#9608;&#9608;&#9608;</b>
+                        <b>Why did the &#9608;&#9608;&#9608;&#9608;&#9608; attack</b>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+
+        let date = "2026-11-22";
+        let id = 4;
+        let answer = "Sea Peoples";
+        let acceptedanswers = ["sea peoples", "sea people", "the sea peoples", "the sea people"];
+
+        let points = 10;
+        let game = Array(points).fill(1);
+        let index = 0;
+
+        function reveal(element, value) {
+
+            if (value > points) {
+              value = points;
+            }
+            points -= value;
+            document.getElementById("points").innerHTML = points;
+            while (index + points < 10) {
+              game[index] = 0;
+              index++;
+            }
+            if (points == 0) {
+              document.getElementById("points").style.color = getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-red");
+              document.getElementById("guessbox").disabled = true;
+              document.getElementById("guess-button").disabled = true;
+              document.getElementById("guessbox").value = answer;
+              document.getElementById("copy").style.display = "block";
+              const container = document.querySelector(".guess-container");
+              container.classList.remove("shake");
+              void container.offsetWidth;
+              container.classList.add("shake");
+              saveGame();
+              revealAll();
+            }
+
+            const revealed = element.nextElementSibling;
+
+            element.style.display = "none";
+            revealed.style.display = "block";
+        }
+
+        function revealAll() {
+            const elements = document.querySelectorAll(".redacted");
+
+            elements.forEach(element => {
+                const revealed = element.nextElementSibling;
+
+                element.style.display = "none";
+                revealed.style.display = "block";
+            });
+        }
+
+        function submitGuess() {
+            // Grab and sanitize the guess
+            let guess = document.querySelector(".guessbox").value
+                .toLowerCase()
+                .replace(/[^a-z0-9 ]/g, "");
+
+            // Check against accepted answers
+            for (let accepted of acceptedanswers) {
+                if (damerauLevenshtein(guess, accepted) <= 2) {
+                    document.getElementById("points").style.color = getComputedStyle(document.documentElement)
+                          .getPropertyValue("--google-green");
+                    document.getElementById("guessbox").disabled = true;
+                    document.getElementById("guess-button").disabled = true;
+                    document.getElementById("copy").style.display = "block";
+                    celebrate();
+                    revealAll();
+                    saveGame();
+                    return true;
+                }
+            }
+
+            points--;
+            document.getElementById("points").innerHTML = points;
+            game[index] = -1;
+            index++;
+            if (points == 0) {
+              document.getElementById("points").style.color = getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-red");
+              document.getElementById("guessbox").disabled = true;
+              document.getElementById("guess-button").disabled = true;
+              document.getElementById("guessbox").value = answer;
+              document.getElementById("copy").style.display = "block";
+              revealAll();
+              saveGame();
+            }
+            const container = document.querySelector(".guess-container");
+            container.classList.remove("shake");
+            void container.offsetWidth;
+            container.classList.add("shake");
+            return false;
+        }
+
+        async function copyResult() {
+            const emojis = game.map(value => {
+                if (value === 1) return "🌟";
+                if (value === -1) return "💔";
+                return "🧩";
+            }).join(" ");
+
+            const result =
+                `Cluegle #${id} · ${date}\n` +
+                `${points} ${points === 1 ? "point" : "points"}\n` +
+                `${emojis}\n` +
+                `https://cluegle.github.io`;
+
+            try {
+                await navigator.clipboard.writeText(result);
+            } catch (error) {
+                console.error("Failed to copy:", error);
+            }
+        }
+
+        function saveGame() {
+            let localState = {};
+
+            try {
+                localState = JSON.parse(localStorage.getItem("cluegle.history")) || {};
+            } catch {
+                localState = {};
+            }
+
+            localState[String(id)] = game;
+
+            localStorage.setItem("cluegle.history", JSON.stringify(localState));
+        }
+
+        function damerauLevenshtein(a, b) {
+            let matrix = [];
+
+            // Initialize matrix
+            for (let i = 0; i <= a.length; i++) {
+                matrix[i] = [i];
+            }
+
+            for (let j = 0; j <= b.length; j++) {
+                matrix[0][j] = j;
+            }
+
+            // Calculate edit distances
+            for (let i = 1; i <= a.length; i++) {
+                for (let j = 1; j <= b.length; j++) {
+                    let cost = a[i - 1] === b[j - 1] ? 0 : 1;
+
+                    matrix[i][j] = Math.min(
+                        matrix[i - 1][j] + 1,       // Deletion
+                        matrix[i][j - 1] + 1,       // Insertion
+                        matrix[i - 1][j - 1] + cost // Replacement
+                    );
+
+                    // Adjacent character swap (transposition)
+                    if (
+                        i > 1 &&
+                        j > 1 &&
+                        a[i - 1] === b[j - 2] &&
+                        a[i - 2] === b[j - 1]
+                    ) {
+                        matrix[i][j] = Math.min(
+                            matrix[i][j],
+                            matrix[i - 2][j - 2] + 1
+                        );
+                    }
+                }
+            }
+
+            return matrix[a.length][b.length];
+        }
+
+        function celebrate() {
+            const colors = [
+              getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-red"),
+              getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-yellow"),
+              getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-green"),
+              getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-blue")
+            ];
+
+            for (let i = 0; i < 35; i++) {
+                const particle = document.createElement("div");
+                particle.classList.add("confetti");
+
+                particle.style.backgroundColor =
+                    colors[Math.floor(Math.random() * colors.length)];
+
+                particle.style.setProperty("--x", `${(Math.random() - 0.5) * 400}px`);
+                particle.style.setProperty("--y", `${(Math.random() - 0.7) * 400}px`);
+                particle.style.setProperty("--rotation", `${Math.random() * 720}deg`);
+
+                document.body.appendChild(particle);
+
+                particle.addEventListener("animationend", () => {
+                    particle.remove();
+                });
+            }
+
+            // Animate points counter
+            const pointsDisplay = document.getElementById("points");
+
+            pointsDisplay.classList.remove("points-pop");
+            void pointsDisplay.offsetWidth;
+            pointsDisplay.classList.add("points-pop");
+        }
+
+        function loadGame() {
+            let localState = {};
+
+            try {
+                localState = JSON.parse(localStorage.getItem("cluegle.history")) || {};
+            } catch {
+                localState = {};
+            }
+
+            // Check whether this game has already been completed
+            if (!Object.prototype.hasOwnProperty.call(localState, String(id))) {
+                return;
+            }
+
+            // Restore the game
+            game = localState[String(id)];
+
+            // Calculate remaining points
+            points = game.filter(value => value === 1).length;
+
+            document.getElementById("points").innerHTML = points;
+
+            // Reveal all clues
+            revealAll();
+
+            // Disable further guesses
+            document.getElementById("guessbox").disabled = true;
+            document.getElementById("guess-button").disabled = true;
+
+            // Display the correct answer
+            document.getElementById("guessbox").value = answer;
+
+            // Show the copy results button
+            document.getElementById("copy").style.display = "block";
+
+            // Update points color
+            if (points === 0) {
+                document.getElementById("points").style.color =
+                    getComputedStyle(document.documentElement)
+                        .getPropertyValue("--google-red");
+            } else {
+                document.getElementById("points").style.color =
+                    getComputedStyle(document.documentElement)
+                        .getPropertyValue("--google-green");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadGame();
+        });
+        </script>
+    </body>
+</html>
