@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cluegle</title>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="clueglefavicon.ico">
+    </head>
+    <body>
+
+        <header>
+            <div class="header-left">
+                <a href="../index.html"><h2><span class="blue">C</span><span class="green">l</span><span class="red">u</span><span class="yellow">e</span><span class="blue">g</span><span class="green">l</span><span class="red">e</span></h2></a>
+                <div class="guess-container">
+                    <input id="guessbox" class="guessbox" type="text" name="guess" placeholder="type your guess" onkeydown="if (event.key === 'Enter') submitGuess()">
+                    <button id="guess-button" class="guess-button" onclick="submitGuess()">
+                        →
+                    </button>
+                </div>
+            </div>
+            <div class="header-right">
+                <span id="points">10</span> <span>points</span>
+                <button id="copy" class="copy" onclick="copyResult()">Copy</button>
+            </div>
+        </header>
+
+        <div class="game-body">
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 5)">
+                    Reveal for <span class="red">-5</span> points.
+                </div>
+                <div class="search-result">
+                    <p>Wikipedia</p>
+                    <p>https://en.wikipedia.org &rsaquo; wiki &rsaquo; &#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p> &#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>The &#9608;&#9608;&#9608;&#9608;&#9608; is a stringed instrument of the violin family, and is usually bowed when played.</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 6)">
+                    Reveal for <span class="red">-6</span> points.
+                </div>
+                <div class="people-also-ask">
+                    <p>People also ask</p>
+                    <p>Is &#9608;&#9608;&#9608;&#9608;&#9608; more difficult than violin?</p>
+                    <hr>
+                    <p>Is it &#9608;&#9608;&#9608;&#9608;&#9608; or voila?</p>
+                    <hr>
+                    <p>What does &#9608;&#9608;&#9608;&#9608;&#9608; mean?</p>
+                    <hr>
+                    <p>Where is &#9608;&#9608;&#9608;&#9608;&#9608; from Shakespeare?</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 3)">
+                    Reveal for <span class="red">-3</span> points.
+                </div>
+                <div class="search-result">
+                    <p>Fiddlershop</p>
+                    <p>https://fiddlershop.com &rsaquo; collections &rsaquo; &#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>We offer a plethora of affordable, quality &#9608;&#9608;&#9608;&#9608;&#9608; for beginners, students, and professionals alike. $809.10 Regular price $899.00 5 SIZES AVAILABLE</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 6)">
+                    Reveal for <span class="red">-6</span> points.
+                </div>
+                <div class="search-result">
+                    <p>Philharmonia</p>
+                    <p>https://philharmonia.co.uk &rsaquo; resources &rsaquo; instruments &rsaquo; &#9608;&#9608;&#9608;&#9608;&#9608;...</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>The &#9608;&#9608;&#9608;&#9608;&#9608; is the alto voice of the String family. It is larger than the violin, and its lowest note is a perfect 5th lower than the violin.</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 4)">
+                    Reveal for <span class="red">-4</span> points.
+                </div>
+                <div class="search-result">
+                    <p>Lisle Violin Shop</p>
+                    <p>https://www.violins.com &rsaquo; c-6-&#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>This handmade, hand varnished &#9608;&#9608;&#9608;&#9608;&#9608; is an excellent candidate for the intermediate player that is seeking a richer, more robust tone.</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 2)">
+                    Reveal for <span class="red">-2</span> points.
+                </div>
+                <div class="search-result">
+                    <p>Shar Music</p>
+                    <p>https://www.sharmusic.com &rsaquo; collections &rsaquo; beginning-&#9608;&#9608;&#9608;&#9608;&#9608;...</p>
+                    <p>Beginning &#9608;&#9608;&#9608;&#9608;&#9608; - Franz Hoffman</p>
+                    <p>Each student &#9608;&#9608;&#9608;&#9608;&#9608; outfit comes complete with everything you need to start playing, including a box, case, and rosin.</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 4)">
+                    Reveal for <span class="red">-4</span> points.
+                </div>
+                <div class="search-result">
+                    <p>Violin Outlet</p>
+                    <p>https://www.violinoutlet.com &rsaquo; ...</p>
+                    <p>Intermediate and Advanced &#9608;&#9608;&#9608;&#9608;&#9608; - FREE SHIPPING</p>
+                    <p>Our intermediate and advanced level &#9608;&#9608;&#9608;&#9608;&#9608; are fully hand-carved and excel both in tone quality and playability. Price: $2,225.00 On Sale For: $1,350.00. Call: ...</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 4)">
+                    Reveal for <span class="red">-4</span> points.
+                </div>
+                <div class="search-result">
+                    <p>Schmitt Music</p>
+                    <p>https://www.schmittmusic.com &rsaquo; collections &rsaquo; &#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>Shop &#9608;&#9608;&#9608;&#9608;&#9608; for Sale | Best Selection of &#9608;&#9608;&#9608;&#9608;&#9608; at ...</p>
+                    <p>Shop a wide range of &#9608;&#9608;&#9608;&#9608;&#9608; from trusted brands like Snow Violin, Eastman, Lake City, Peter Bingen, and more. Find the perfect &#9608;&#9608;&#9608;&#9608;&#9608; at Schmitt Music today!</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 6)">
+                    Reveal for <span class="red">-6</span> points.
+                </div>
+                <div class="search-result">
+                    <p>BYU</p>
+                    <p>https://&#9608;&#9608;&#9608;&#9608;&#9608;.lib.byu.edu &rsaquo; the-&#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>The &#9608;&#9608;&#9608;&#9608;&#9608; & &#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>The &#9608;&#9608;&#9608;&#9608;&#9608; is the middle-range instrument of the violin family. It is sometimes cavalierly referred to as the "big fiddle." Its position in the violin family ...</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 6)">
+                    Reveal for <span class="red">-6</span> points.
+                </div>
+                <div class="people-also-search-for">
+                    <p>People also search for</p>
+                    <div class="search-for-grid">
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; vs violin</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; music</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; for sale</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; vs cello</b>
+                        <b>What is a &#9608;&#9608;&#9608;&#9608;&#9608; instrument</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; history</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; meaning French</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; pronounciation</b>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+
+        let date = "2026-11-23";
+        let id = 5;
+        let answer = "Viola";
+        let acceptedanswers = ["viola", "violas"];
+        let unacceptedanswers = ["violin", "violins"];
+
+        let points = 10;
+        let game = Array(points).fill(1);
+        let index = 0;
+
+        function reveal(element, value) {
+
+            if (value > points) {
+              value = points;
+            }
+            points -= value;
+            document.getElementById("points").innerHTML = points;
+            while (index + points < 10) {
+              game[index] = 0;
+              index++;
+            }
+            if (points == 0) {
+              document.getElementById("points").style.color = getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-red");
+              document.getElementById("guessbox").disabled = true;
+              document.getElementById("guess-button").disabled = true;
+              document.getElementById("guessbox").value = answer;
+              document.getElementById("copy").style.display = "block";
+              const container = document.querySelector(".guess-container");
+              container.classList.remove("shake");
+              void container.offsetWidth;
+              container.classList.add("shake");
+              saveGame();
+              revealAll();
+            }
+
+            const revealed = element.nextElementSibling;
+
+            element.style.display = "none";
+            revealed.style.display = "block";
+        }
+
+        function revealAll() {
+            const elements = document.querySelectorAll(".redacted");
+
+            elements.forEach(element => {
+                const revealed = element.nextElementSibling;
+
+                element.style.display = "none";
+                revealed.style.display = "block";
+            });
+        }
+
+        function submitGuess() {
+            // Grab and sanitize the guess
+            let guess = document.querySelector(".guessbox").value
+                .toLowerCase()
+                .replace(/[^a-z0-9 ]/g, "");
+
+            // Check against (un)accepted answers
+            let upass = true;
+            for (let unaccepted of unacceptedanswers) {
+                if (guess === unaccepted) {
+                  upass = false;
+                  break;
+                }
+            }
+            if (upass) {
+                for (let accepted of acceptedanswers) {
+                    if (damerauLevenshtein(guess, accepted) <= 2) {
+                        document.getElementById("points").style.color = getComputedStyle(document.documentElement)
+                              .getPropertyValue("--google-green");
+                        document.getElementById("guessbox").disabled = true;
+                        document.getElementById("guess-button").disabled = true;
+                        document.getElementById("copy").style.display = "block";
+                        celebrate();
+                        revealAll();
+                        saveGame();
+                        return true;
+                    }
+                }
+            }
+
+            points--;
+            document.getElementById("points").innerHTML = points;
+            game[index] = -1;
+            index++;
+            if (points == 0) {
+              document.getElementById("points").style.color = getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-red");
+              document.getElementById("guessbox").disabled = true;
+              document.getElementById("guess-button").disabled = true;
+              document.getElementById("guessbox").value = answer;
+              document.getElementById("copy").style.display = "block";
+              revealAll();
+              saveGame();
+            }
+            const container = document.querySelector(".guess-container");
+            container.classList.remove("shake");
+            void container.offsetWidth;
+            container.classList.add("shake");
+            return false;
+        }
+
+        async function copyResult() {
+            const emojis = game.map(value => {
+                if (value === 1) return "🌟";
+                if (value === -1) return "💔";
+                return "🧩";
+            }).join(" ");
+
+            const result =
+                `Cluegle #${id} · ${date}\n` +
+                `${points} ${points === 1 ? "point" : "points"}\n` +
+                `${emojis}\n` +
+                `https://cluegle.github.io`;
+
+            try {
+                await navigator.clipboard.writeText(result);
+            } catch (error) {
+                console.error("Failed to copy:", error);
+            }
+        }
+
+        function saveGame() {
+            let localState = {};
+
+            try {
+                localState = JSON.parse(localStorage.getItem("cluegle.history")) || {};
+            } catch {
+                localState = {};
+            }
+
+            localState[String(id)] = game;
+
+            localStorage.setItem("cluegle.history", JSON.stringify(localState));
+        }
+
+        function damerauLevenshtein(a, b) {
+            let matrix = [];
+
+            // Initialize matrix
+            for (let i = 0; i <= a.length; i++) {
+                matrix[i] = [i];
+            }
+
+            for (let j = 0; j <= b.length; j++) {
+                matrix[0][j] = j;
+            }
+
+            // Calculate edit distances
+            for (let i = 1; i <= a.length; i++) {
+                for (let j = 1; j <= b.length; j++) {
+                    let cost = a[i - 1] === b[j - 1] ? 0 : 1;
+
+                    matrix[i][j] = Math.min(
+                        matrix[i - 1][j] + 1,       // Deletion
+                        matrix[i][j - 1] + 1,       // Insertion
+                        matrix[i - 1][j - 1] + cost // Replacement
+                    );
+
+                    // Adjacent character swap (transposition)
+                    if (
+                        i > 1 &&
+                        j > 1 &&
+                        a[i - 1] === b[j - 2] &&
+                        a[i - 2] === b[j - 1]
+                    ) {
+                        matrix[i][j] = Math.min(
+                            matrix[i][j],
+                            matrix[i - 2][j - 2] + 1
+                        );
+                    }
+                }
+            }
+
+            return matrix[a.length][b.length];
+        }
+
+        function celebrate() {
+            const colors = [
+              getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-red"),
+              getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-yellow"),
+              getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-green"),
+              getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-blue")
+            ];
+
+            for (let i = 0; i < 35; i++) {
+                const particle = document.createElement("div");
+                particle.classList.add("confetti");
+
+                particle.style.backgroundColor =
+                    colors[Math.floor(Math.random() * colors.length)];
+
+                particle.style.setProperty("--x", `${(Math.random() - 0.5) * 400}px`);
+                particle.style.setProperty("--y", `${(Math.random() - 0.7) * 400}px`);
+                particle.style.setProperty("--rotation", `${Math.random() * 720}deg`);
+
+                document.body.appendChild(particle);
+
+                particle.addEventListener("animationend", () => {
+                    particle.remove();
+                });
+            }
+
+            // Animate points counter
+            const pointsDisplay = document.getElementById("points");
+
+            pointsDisplay.classList.remove("points-pop");
+            void pointsDisplay.offsetWidth;
+            pointsDisplay.classList.add("points-pop");
+        }
+
+        function loadGame() {
+            let localState = {};
+
+            try {
+                localState = JSON.parse(localStorage.getItem("cluegle.history")) || {};
+            } catch {
+                localState = {};
+            }
+
+            // Check whether this game has already been completed
+            if (!Object.prototype.hasOwnProperty.call(localState, String(id))) {
+                return;
+            }
+
+            // Restore the game
+            game = localState[String(id)];
+
+            // Calculate remaining points
+            points = game.filter(value => value === 1).length;
+
+            document.getElementById("points").innerHTML = points;
+
+            // Reveal all clues
+            revealAll();
+
+            // Disable further guesses
+            document.getElementById("guessbox").disabled = true;
+            document.getElementById("guess-button").disabled = true;
+
+            // Display the correct answer
+            document.getElementById("guessbox").value = answer;
+
+            // Show the copy results button
+            document.getElementById("copy").style.display = "block";
+
+            // Update points color
+            if (points === 0) {
+                document.getElementById("points").style.color =
+                    getComputedStyle(document.documentElement)
+                        .getPropertyValue("--google-red");
+            } else {
+                document.getElementById("points").style.color =
+                    getComputedStyle(document.documentElement)
+                        .getPropertyValue("--google-green");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadGame();
+        });
+        </script>
+    </body>
+</html>
