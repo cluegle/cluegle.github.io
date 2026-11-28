@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cluegle</title>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="clueglefavicon.ico">
+    </head>
+    <body>
+
+        <header>
+            <div class="header-left">
+                <a href="../index.html"><h2><span class="blue">C</span><span class="green">l</span><span class="red">u</span><span class="yellow">e</span><span class="blue">g</span><span class="green">l</span><span class="red">e</span></h2></a>
+                <div class="guess-container">
+                    <input id="guessbox" class="guessbox" type="text" name="guess" placeholder="type your guess" onkeydown="if (event.key === 'Enter') submitGuess()">
+                    <button id="guess-button" class="guess-button" onclick="submitGuess()">
+                        →
+                    </button>
+                </div>
+            </div>
+            <div class="header-right">
+                <span id="points">10</span> <span>points</span>
+                <button id="copy" class="copy" onclick="copyResult()">Copy</button>
+            </div>
+        </header>
+
+        <div class="game-body">
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 2)">
+                    Reveal for <span class="red">-2</span> points.
+                </div>
+                <div class="search-result">
+                    <p>IMDb</p>
+                    <p>https://www.imdb.com &rsaquo; name</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>At a consistently lean 6' 2", green-eyed &#9608;&#9608;&#9608;&#9608;&#9608; may very well be one of the last of the dying breed of swashbuckling, classically trained Shakespearean ...</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 5)">
+                    Reveal for <span class="red">-5</span> points.
+                </div>
+                <div class="people-also-ask">
+                    <p>People also ask</p>
+                    <p>Why was &#9608;&#9608;&#9608;&#9608;&#9608 dropped as James Bond?</p>
+                    <hr>
+                    <p>Did Whoopi Goldberg date &#9608;&#9608;&#9608;&#9608;&#9608?</p>
+                    <hr>
+                    <p>What does &#9608;&#9608;&#9608;&#9608;&#9608; do now?</p>
+                    <hr>
+                    <p>How old was &#9608;&#9608;&#9608;&#9608;&#9608; when he was James Bond?</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 6)">
+                    Reveal for <span class="red">-6</span> points.
+                </div>
+                <div class="search-result">
+                    <p>Reddit &#183; r/JamesBond</p>
+                    <p>60+ comments &#183; 9 months ago</p>
+                    <p>What Are People's Thoughts on &#9608;&#9608;&#9608;&#9608;&#9608;?</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608; has always been my favorite. Brilliant. Really good Bond, He comes across like a real, calculated killer.</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 6)">
+                    Reveal for <span class="red">-6</span> points.
+                </div>
+                <div class="search-result">
+                    <p>Wikipedia</p>
+                    <p>https://simple.wikipedia.org &rsaquo; wiki &rsaquo; &#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608; (born 21 March 1946) is a British actor. He is famous for playing fictional spy James Bond in two movies in 1987 and 1989.</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 1)">
+                    Reveal for <span class="red">-1</span> points.
+                </div>
+                <div class="search-result">
+                    <p>Facebook &#183; &#9608;&#9608;&#9608;&#9608;&#9608; Fishers</p>
+                    <p>2.7K+ followers</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608; Fishers (@&#9608;&#9608;&#9608;&#9608;&#9608;ator)</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608; Fishers. 2747 followers · 3 talking about this. &#9608;&#9608;&#9608;&#9608;&#9608; Fansite [aka Fishers] Admin: Marga, author of "&#9608;&#9608;&#9608;&#9608;&#9608;: A Complete...</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 4)">
+                    Reveal for <span class="red">-4</span> points.
+                </div>
+                <div class="search-result">
+                    <p>Letterboxd</p>
+                    <p>https://letterboxd.com &rsaquo; actor &rsaquo; &#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>Films starring &#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608; (born March 21, 1946) is a British actor. He gained international prominence as the fourth actor to portray fictional secret ...</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 2)">
+                    Reveal for <span class="red">-2</span> points.
+                </div>
+                <div class="search-result">
+                    <p>MI6-HQ.com</p>
+                    <p>https://www.mi6-hq.com &rsaquo; Features &rsaquo; &#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608; at 80</p>
+                    <p>Mar 21, 2026 — A classically trained actor shaped by the stage and the discipline of Shakespeare, he emerged from the Royal Academy of Dramatic Art and the ...</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 3)">
+                    Reveal for <span class="red">-3</span> points.
+                </div>
+                <div class="search-result">
+                    <p>Apple TV</p>
+                    <p>https://tv.apple.com &rsaquo; person &rsaquo; &#9608;&#9608;&#9608;&#9608;&#9608;</p>
+                    <p>&#9608;&#9608;&#9608;&#9608;&#9608; Movies and Shows</p>
+                    <p>Movies &#183; Hot Fuzz &#183; The Tourist &#183; The Living Daylights &#183; Licence to Kill &#183; The Rocketeer &#183; American Outlaws &#183; Flash Gordon &#183; The Beautician and the Beast &#183; The ...</p>
+                </div>
+            </div>
+
+            <div class="redactable">
+                <div class="redacted" onclick="reveal(this, 4)">
+                    Reveal for <span class="red">-4</span> points.
+                </div>
+                <div class="people-also-search-for">
+                    <p>People also search for</p>
+                    <div class="search-for-grid">
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; wife</b>
+                        <b> &#9608;&#9608;&#9608;&#9608;&#9608; latest movie</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; James Bond</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; tv shows</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; voice acting</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; imdb</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; The Tourist</b>
+                        <b>&#9608;&#9608;&#9608;&#9608;&#9608; The Crown</b>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+
+        let date = "2026-11-28";
+        let id = 10;
+        let answer = "Timothy Dalton";
+        let acceptedanswers = ["timothy dalton", "tim dalton", "dalton", "timothy leonard dalton leggett"];
+        let unacceptedanswers = [];
+
+        let points = 10;
+        let game = Array(points).fill(1);
+        let index = 0;
+
+        function reveal(element, value) {
+
+            if (value > points) {
+              value = points;
+            }
+            points -= value;
+            document.getElementById("points").innerHTML = points;
+            while (index + points < 10) {
+              game[index] = 0;
+              index++;
+            }
+            if (points == 0) {
+              document.getElementById("points").style.color = getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-red");
+              document.getElementById("guessbox").disabled = true;
+              document.getElementById("guess-button").disabled = true;
+              document.getElementById("guessbox").value = answer;
+              document.getElementById("copy").style.display = "block";
+              const container = document.querySelector(".guess-container");
+              container.classList.remove("shake");
+              void container.offsetWidth;
+              container.classList.add("shake");
+              saveGame();
+              revealAll();
+            }
+
+            const revealed = element.nextElementSibling;
+
+            element.style.display = "none";
+            revealed.style.display = "block";
+        }
+
+        function revealAll() {
+            const elements = document.querySelectorAll(".redacted");
+
+            elements.forEach(element => {
+                const revealed = element.nextElementSibling;
+
+                element.style.display = "none";
+                revealed.style.display = "block";
+            });
+        }
+
+        function submitGuess() {
+            // Grab and sanitize the guess
+            let guess = document.querySelector(".guessbox").value
+                .toLowerCase()
+                .replace(/[^a-z0-9 ]/g, "");
+
+            // Check against (un)accepted answers
+            let upass = true;
+            for (let unaccepted of unacceptedanswers) {
+                if (guess === unaccepted) {
+                  upass = false;
+                  break;
+                }
+            }
+            if (upass) {
+                for (let accepted of acceptedanswers) {
+                    if (damerauLevenshtein(guess, accepted) <= 2) {
+                        document.getElementById("points").style.color = getComputedStyle(document.documentElement)
+                              .getPropertyValue("--google-green");
+                        document.getElementById("guessbox").disabled = true;
+                        document.getElementById("guess-button").disabled = true;
+                        document.getElementById("copy").style.display = "block";
+                        celebrate();
+                        revealAll();
+                        saveGame();
+                        return true;
+                    }
+                }
+            }
+
+            points--;
+            document.getElementById("points").innerHTML = points;
+            game[index] = -1;
+            index++;
+            if (points == 0) {
+              document.getElementById("points").style.color = getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-red");
+              document.getElementById("guessbox").disabled = true;
+              document.getElementById("guess-button").disabled = true;
+              document.getElementById("guessbox").value = answer;
+              document.getElementById("copy").style.display = "block";
+              revealAll();
+              saveGame();
+            }
+            const container = document.querySelector(".guess-container");
+            container.classList.remove("shake");
+            void container.offsetWidth;
+            container.classList.add("shake");
+            return false;
+        }
+
+        async function copyResult() {
+            const emojis = game.map(value => {
+                if (value === 1) return "🌟";
+                if (value === -1) return "💔";
+                return "🧩";
+            }).join(" ");
+
+            const result =
+                `Cluegle #${id} · ${date}\n` +
+                `${points} ${points === 1 ? "point" : "points"}\n` +
+                `${emojis}\n` +
+                `https://cluegle.github.io`;
+
+            try {
+                await navigator.clipboard.writeText(result);
+            } catch (error) {
+                console.error("Failed to copy:", error);
+            }
+        }
+
+        function saveGame() {
+            let localState = {};
+
+            try {
+                localState = JSON.parse(localStorage.getItem("cluegle.history")) || {};
+            } catch {
+                localState = {};
+            }
+
+            localState[String(id)] = game;
+
+            localStorage.setItem("cluegle.history", JSON.stringify(localState));
+        }
+
+        function damerauLevenshtein(a, b) {
+            let matrix = [];
+
+            // Initialize matrix
+            for (let i = 0; i <= a.length; i++) {
+                matrix[i] = [i];
+            }
+
+            for (let j = 0; j <= b.length; j++) {
+                matrix[0][j] = j;
+            }
+
+            // Calculate edit distances
+            for (let i = 1; i <= a.length; i++) {
+                for (let j = 1; j <= b.length; j++) {
+                    let cost = a[i - 1] === b[j - 1] ? 0 : 1;
+
+                    matrix[i][j] = Math.min(
+                        matrix[i - 1][j] + 1,       // Deletion
+                        matrix[i][j - 1] + 1,       // Insertion
+                        matrix[i - 1][j - 1] + cost // Replacement
+                    );
+
+                    // Adjacent character swap (transposition)
+                    if (
+                        i > 1 &&
+                        j > 1 &&
+                        a[i - 1] === b[j - 2] &&
+                        a[i - 2] === b[j - 1]
+                    ) {
+                        matrix[i][j] = Math.min(
+                            matrix[i][j],
+                            matrix[i - 2][j - 2] + 1
+                        );
+                    }
+                }
+            }
+
+            return matrix[a.length][b.length];
+        }
+
+        function celebrate() {
+            const colors = [
+              getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-red"),
+              getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-yellow"),
+              getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-green"),
+              getComputedStyle(document.documentElement)
+                      .getPropertyValue("--google-blue")
+            ];
+
+            for (let i = 0; i < 35; i++) {
+                const particle = document.createElement("div");
+                particle.classList.add("confetti");
+
+                particle.style.backgroundColor =
+                    colors[Math.floor(Math.random() * colors.length)];
+
+                particle.style.setProperty("--x", `${(Math.random() - 0.5) * 400}px`);
+                particle.style.setProperty("--y", `${(Math.random() - 0.7) * 400}px`);
+                particle.style.setProperty("--rotation", `${Math.random() * 720}deg`);
+
+                document.body.appendChild(particle);
+
+                particle.addEventListener("animationend", () => {
+                    particle.remove();
+                });
+            }
+
+            // Animate points counter
+            const pointsDisplay = document.getElementById("points");
+
+            pointsDisplay.classList.remove("points-pop");
+            void pointsDisplay.offsetWidth;
+            pointsDisplay.classList.add("points-pop");
+        }
+
+        function loadGame() {
+            let localState = {};
+
+            try {
+                localState = JSON.parse(localStorage.getItem("cluegle.history")) || {};
+            } catch {
+                localState = {};
+            }
+
+            // Check whether this game has already been completed
+            if (!Object.prototype.hasOwnProperty.call(localState, String(id))) {
+                return;
+            }
+
+            // Restore the game
+            game = localState[String(id)];
+
+            // Calculate remaining points
+            points = game.filter(value => value === 1).length;
+
+            document.getElementById("points").innerHTML = points;
+
+            // Reveal all clues
+            revealAll();
+
+            // Disable further guesses
+            document.getElementById("guessbox").disabled = true;
+            document.getElementById("guess-button").disabled = true;
+
+            // Display the correct answer
+            document.getElementById("guessbox").value = answer;
+
+            // Show the copy results button
+            document.getElementById("copy").style.display = "block";
+
+            // Update points color
+            if (points === 0) {
+                document.getElementById("points").style.color =
+                    getComputedStyle(document.documentElement)
+                        .getPropertyValue("--google-red");
+            } else {
+                document.getElementById("points").style.color =
+                    getComputedStyle(document.documentElement)
+                        .getPropertyValue("--google-green");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadGame();
+        });
+        </script>
+    </body>
+</html>
